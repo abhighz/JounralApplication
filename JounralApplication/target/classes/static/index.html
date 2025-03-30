@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Journal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1><i class="fas fa-book-open"></i> My Journal</h1>
+                <button id="newEntryBtn" class="btn-primary">
+                    <i class="fas fa-plus"></i> New Entry
+                </button>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search entries...">
+                <i class="fas fa-search"></i>
+            </div>
+        </header>
+
+        <div id="entryForm" class="entry-form hidden">
+            <div class="form-header">
+                <h2><i class="fas fa-edit"></i> New Journal Entry</h2>
+                <button class="close-btn" id="cancelBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="journalForm">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" required placeholder="Enter your entry title">
+                </div>
+                <div class="form-group">
+                    <label for="content">Content</label>
+                    <textarea id="content" name="content" rows="10" required placeholder="Write your thoughts here..."></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-save"></i> Save Entry
+                    </button>
+                    <button type="button" class="btn-secondary" id="cancelBtn">
+                        <i class="fas fa-times"></i> Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div id="entriesList" class="entries-list">
+            <!-- Journal entries will be dynamically added here -->
+        </div>
+
+        <div id="toast" class="toast hidden">
+            <i class="fas fa-check-circle"></i>
+            <span id="toastMessage"></span>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
